@@ -1,0 +1,966 @@
+/* General Settings */
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.6rem;
+    
+}
+
+/* Navbar */
+
+.navbar {
+    background-color: #333;
+    padding: 10px 15px;
+    width: 100%;
+    border-radius: 12px; /* حواف مستديرة خفيفة */
+    transition: all 0.3s ease-in-out; /* تأثير سلس */
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between; /* توزيع العناصر بين الطرفين */
+    transition: all 0.3s ease-in-out; /* تأثير سلس */
+}
+
+
+.navbar-brand img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.1);
+}
+
+.navbar-nav .nav-link {
+    color: #f9f9f9;
+    margin: 0 10px;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: #ffd700;
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown-item {
+    color: #333;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+    background-color: #ffd700;
+    color: #fff;
+}
+
+
+
+/* تحسين Navbar Toggler */
+.navbar-toggler {
+    border: none;
+    background-color: transparent; /* إزالة الخلفية */
+    padding: 12px;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* إضافة التأثيرات */
+    cursor: pointer; /* تغيير المؤشر عند المرور */
+    transition: transform 0.4s ease, background-color 0.4s ease; /* إضافة تأثيرات سلسة */
+}
+
+.navbar-toggler-icon {
+    background-color: #ffd700; /* تغيير لون أيقونة التبديل */
+    width: 35px;
+    height: 4px;
+    position: relative;
+    transition: background-color 0.4s ease, transform 0.4s ease;
+    border-radius: 4px;
+}
+
+.navbar-toggler-icon::before, .navbar-toggler-icon::after {
+    content: '';
+    background-color: #ffd700; /* إضافة لون إلى الأشرطة */
+    width: 35px;
+    height: 4px;
+    position: absolute;
+    border-radius: 4px;
+    transition: transform 0.4s ease; /* تأثير التحريك */
+
+}
+
+/* تغيير الوضع عند التفاعل مع زر التبديل */
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-color: #ff8c00; /* تغيير لون الأيقونة عند المرور */
+}
+
+.navbar-toggler:hover .navbar-toggler-icon::before,
+.navbar-toggler:hover .navbar-toggler-icon::after {
+    background-color: #ff8c00;
+}
+
+/* إضافة تأثير دوران عند التبديل */
+.navbar-toggler.collapsed .navbar-toggler-icon::before {
+    transform: translateY(10px) rotate(45deg); /* انتقال الأشرطة إلى شكل "X" */
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon::after {
+    transform: translateY(-10px) rotate(-45deg); /* الأشرطة السفلية تتحول إلى "X" */ 
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon {
+    background-color: transparent;
+}
+
+/* التعديل على زر التبديل عند التفاعل */
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 12px rgba(255, 140, 0, 0.6); /* تأثير ضوء عند التركيز */
+    transform: scale(1.1); /* تكبير الزر عند التركيز */
+}
+
+/* تأثير عند التمرير على الزر مع إضافة حركة للضغط */
+.navbar-toggler:active {
+    transform: scale(0.95); /* تصغير الزر عند الضغط عليه */
+    background-color: #ff8c00; /* تغيير اللون إلى البرتقالي أثناء الضغط */
+}
+
+/* Logo Styling */
+#logo {
+    width: 90px; /* تأكد من أن العرض متساوي */
+    height: 90px; /* تأكد من أن الارتفاع متساوي */
+    border-radius: 50%; /* يجعل الصورة دائرية */
+    object-fit: cover; /* يضمن عدم تشويه الصورة */
+    border: 2px solid #ffd700; /* إطار دائري حول الشعار */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transition effects */
+}
+
+#logo:hover {
+    transform: scale(1.2) rotate(360deg); /* Rotation effect */
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.5); /* Glow effect */
+}
+
+ /* Intro Section Styles */
+.intro {
+    background: linear-gradient(135deg, #f7f7f7, #e0e0e0); /* Gradient background for modern look */
+    padding: 60px 20px;  /* Spacious padding for better layout */
+    text-align: center; /* Centering the text */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for a modern feel */
+    transition: transform 0.3s ease-out, background 0.3s ease; /* Smooth transition effects */
+}
+
+/* Add animation on hover */
+.intro:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    background: linear-gradient(135deg, #ffffff, #d9d9d9); /* Change gradient on hover */
+}
+
+/* Styling the heading */
+.intro h5 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #ffd700;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px; /* Slightly spaced letters for elegance */
+    animation: fadeIn 1s ease-out; /* Fade-in animation for heading */
+}
+
+/* Styling the paragraph */
+.intro p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    opacity: 0; /* Initially hidden for animation */
+    animation: fadeIn 1.5s ease-out 0.5s forwards; /* Delayed fade-in for the paragraph */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start from a lower position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the normal position */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* General Product Image Styles */
+.product-icons {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+    animation: fadeInUp 1.5s ease-out;
+    display: flex;
+    justify-content: center;
+     
+
+}
+
+.product-item {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+    
+}
+
+.product-item i {
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.product-item p {
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+/* On Hover Effects */
+.product-item:hover {
+    transform: scale(1.05); /* تكبير الصورة عند التمرير */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-item:hover i {
+    color: #ffd700; /* تغيير لون الأيقونة عند التمرير */
+}
+
+.product-item:hover p {
+    color: #ffd700; /* تغيير لون النص عند التمرير */
+}
+
+/* Layout for the Icons */
+.product-icons .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.product-item a {
+    text-decoration: none;
+}
+
+.product-item a:hover {
+    text-decoration: none;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Transitions */
+.product-item {
+    animation: scaleEffect 2s infinite;
+}
+
+
+
+/* Why Choose Us Section */
+.list {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.list h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+}
+
+.list h1::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #ffd700;
+    margin: 10px auto;
+}
+
+.list ul {
+    text-align: left;
+    padding: 0;
+    list-style: none;
+    font-size: 1.1rem;
+}
+
+.list ul li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+    color: #555;
+    font-weight: bold; /* خط عريض */
+    line-height: 1.8; /* تحسين المسافات بين الأسطر */
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    text-align: right;
+    transition: all 0.5s ease-in-out; /* Transition effect */
+}
+
+.list ul li:hover {
+    transform: scale(1.05) rotate(-2deg); /* Scaling and slight rotation */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #fffbe6;; /* لون جديد عند التمرير */
+
+}
+
+.list ul li::before {
+    content: '✔️';
+    color: #ffd700;
+    position: right;
+    left: 0;
+    font-size: 1.2rem;
+}
+
+
+.carousel-content-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem;
+    background: linear-gradient(145deg, #202020, #121212);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Content Section */
+.content-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.content-inner {
+    max-width: 500px;
+    background: #1a1a1a;
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid #d4af37;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    transform: translateX(-50px);
+    opacity: 0;
+    animation: fadeInLeft 1.5s ease forwards;
+}
+
+/* Animations for content */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content-inner h1 {
+    font-size: 2.8rem;
+    color: #d4af37;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s ease-in-out;
+}
+
+.content-inner h1:hover {
+    color: #ffcc80;
+    transform: translateY(-5px);
+}
+
+/* Paragraph text animation */
+.content-inner p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #cfcfcf;
+    opacity: 0;
+    animation: fadeInUp 2s ease forwards 0.6s;
+}
+
+/* Button animation */
+.cta-btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    color: #121212;
+    background: linear-gradient(45deg, #d4af37, #ffcc80);
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+}
+
+.cta-btn:hover {
+    color: #fff;
+    transform: translateY(-5px) scale(1.05);
+    background: linear-gradient(45deg, #ffcc80, #d4af37);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.6);
+}
+
+/* Carousel Section */
+.carousel-container {
+    flex: 1;
+    transform: translateX(50px);
+    opacity: 0;
+    animation: fadeInRight 1.5s ease forwards 0.5s;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.carousel-container img {
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    width: 700px;
+    height: 600px;
+}
+
+/* Carousel image zoom-in effect */
+.carousel-container img {
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-container img:hover {
+    transform: scale(1.05);
+}
+
+
+
+/* Animations when scrolling down the page */
+.scroll-up {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: scrollEffect 1.5s ease-out forwards;
+}
+
+@keyframes scrollEffect {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Styling for h1 */
+h1 {
+    font-size: 3rem;
+    color: #ffd700; /* Golden color */
+    font-family: 'Cairo', sans-serif; /* Elegant Arabic font */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateY(-50px);
+    animation: fadeInDown 1s ease-in-out forwards;
+}
+
+/* Hover effect for h1 */
+h1:hover {
+    color: #ffcc80;
+    transform: translateY(-10px);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Styling for p */
+p {
+    font-size: 1.5rem;
+    color: #908686;
+    font-family: 'Cairo', sans-serif;
+    line-height: 2;
+    margin-top: 1rem;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Footer Styling */
+.footer {
+    background: linear-gradient(to right, #222, #444); /* خلفية داكنة بتدرج ألوان جذاب */
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* تأثير الظل */
+    margin: 0;
+    transition: background-color 0.3s ease; /* انتقال اللون عند التفاعل */
+}
+
+/* Top gold bar in footer */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, #ffd700, #ff8c00); /* شريط ذهبي في الأعلى */
+}
+
+/* Footer Logo Styling */
+.footer-logo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffd700;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.footer-logo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.5); /* تأثير التوهج عند التمرير */
+}
+
+/* Footer Links */
+.footer-links {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.footer-links a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* تأثيرات للانتقال */
+}
+
+.footer-links a:hover {
+    color: #ff8c00;
+    text-shadow: 0 0 8px rgba(255, 140, 0, 0.7); /* تأثير التوهج عند التمرير */
+    transform: scale(1.1); /* تكبير الروابط عند التمرير */
+}
+
+/* Footer Social Icons */
+.contact-icons {
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.7rem;
+}
+
+.contact-icons a {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    transition: all 0.3s ease-in-out; /* تأثيرات التفاعل */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف للأيقونات */
+}
+
+.contact-icons a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* تكبير الظل عند التمرير */
+}
+
+/* Colors for each icon */
+.whatsapp {
+    background-color: #25d366;
+    color: #fff;
+}
+
+.whatsapp:hover {
+    background-color: #1ebc57;
+}
+
+.phone {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.phone:hover {
+    background-color: #0056b3;
+}
+
+.facebook {
+    background-color: #1877f2;
+    color: #fff;
+}
+
+.facebook:hover {
+    background-color: #145dbf;
+}
+
+/* Footer Rights Text */
+.footer-rights {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer-rights:hover {
+    opacity: 1;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* تأثير توهج للنص عند التمرير */
+}
+
+/* Keyframes for smooth glow effect */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+    }
+}
+
+/* Glow effect for logo */
+#footer-logo:hover {
+    animation: glow 1.5s infinite; /* تأثير التوهج عند التمرير على الشعار */
+}
+
+/* Dropdown Styling */
+.dropdown-menu.ordered-dropdown {
+    background-color: #333;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    transform-origin: top center;
+    animation: slide-down 0.3s ease-in-out;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* List Items Styling for Dropdown */
+.ordered-dropdown li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.ordered-dropdown li span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffd700;
+    margin-right: 10px;
+}
+
+.ordered-dropdown li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.ordered-dropdown li a:hover {
+    color: #ffd700; /* التأثير الذهبي على التمرير */
+    transform: scale(1.1); /* تكبير العنصر عند التمرير */
+}
+
+/* Rotate Chevron Icon on Dropdown Open */
+.dropdown-toggle[aria-expanded="true"] i {
+    transform: rotate(180deg); /* تدوير الأيقونة عند فتح القائمة المنسدلة */
+}
+
+/* Slide down animation for dropdown */
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+
+
+
+
+
+
+ 
+  
+
+
+
+/* شاشات العرض المتوسطة والصغيرة (أجهزة لوحية وهواتف محمولة صغيرة) */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        padding: 0.5rem 1rem;
+        width: 100%;
+    }
+
+    .navbar-brand img {
+        width: 70px;
+        height: 60px;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 10px 0;
+        font-size: 0.9rem;
+    }
+
+    .intro h5 {
+        font-size: 1.8rem; /* Slightly smaller text on mobile */
+    }
+    .intro p {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+    }
+
+    .product-icons .row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .product-item p {
+        font-size: 1rem;
+    }
+
+    
+
+    /* Why Choose Us Section */
+    .list h1 {
+        font-size: 1.5rem;
+    }
+
+    .list ul {
+        padding-left: 10px;
+    }
+
+    .list ul li {
+        font-size: 0.9rem;
+    }
+
+    .carousel-content-wrapper {
+        flex-direction: column;
+    }
+
+    .content-inner {
+        text-align: center;
+    }
+
+    .carousel-container img {
+        width: 100%;
+        height: 400px;
+
+    }
+
+
+    
+   
+
+    /* Footer */
+    footer {
+        font-size: 0.8rem;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        margin-top: 15px;
+    }
+
+    .dropdown-menu.dropdown-large {
+        position: static; /* لمنع القص على الشاشات الصغيرة */
+        max-height: none; /* عرض كامل على الشاشات الصغيرة */
+        overflow-y: visible;
+    }
+
+    
+
+
+  
+
+
+
+/* شاشات العرض الصغيرة جدًا (هواتف محمولة صغيرة جدًا) */
+@media (max-width: 576px) {
+
+
+   /* Navbar */
+   .navbar-toggler {
+    font-size: 0.8rem;
+}
+
+.navbar-brand img {
+    width: 60px;
+    height: 50px;
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.8rem;
+}
+
+/* Intro Section */
+.intro p {
+    font-size: 0.8rem;
+}
+
+.intro p h5 {
+    font-size: 0.9rem;
+}
+
+/* Why Choose Us Section */
+.list ul li {
+    font-size: 0.8rem;
+}
+
+/* Footer */
+footer {
+    padding: 8px;
+    font-size: 0.7rem;
+    width: 100%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+ 
